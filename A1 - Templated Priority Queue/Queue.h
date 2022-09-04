@@ -1,3 +1,6 @@
+// Programmer: Jonathan Karcher
+// Date: 2022 / 09
+// IGME 309
 #pragma once
 #include <iostream>
 template <class  E>
@@ -12,43 +15,63 @@ public:
 	E* elements;
 	// Constructor: MyQueue
 	// Purpose: sets the initial state of the array of elements
+	// Arguments: none
+	// Output: the empty queue
 	MyQueue();
 	// Copy Constructor: MyQueue
-	// purpose: set the inital state of the array to the array being compaired
+	// Purpose: set the inital state of the array to the array being compaired
+	// Arguments: class object to copy
+	// Output: a duplicet queue 
 	MyQueue(const MyQueue& queue);
 	// Destructor: MyQueue
 	// Purpose: clear the array of elements
+	// Arguments: none
+	// Output: nothing 
 	~MyQueue();
 	// Method: Print 
 	// Purpose: Print out the contents of the array 
+	// Arguments: none
+	// Output: the contents of the queue on a new line for each entery
 	void Print();
 	// Method: Pop
 	// Purpose: Return the first element in the array
+	// Arguments: none
+	// Output: the first element
 	E Pop();
 	// Method: Push
 	// Purpose: Add one element to the array
+	// Output  nothing
 	void Push(E element);
 	// Method: GetSize
 	// Purpose: Return the number of elements in the array
+	// Arguments: element being added to the queue
+	// Output:  the number of active elements
 	int GetSize();
 	// Method: IsEmpty
 	// Purpose: Return true if there are no elements contained
+	// Arguments: none
+	// Output: true if empty or false if not empty
 	bool IsEmpty();
 	// Method: Copy
 	// Purpose: Copy the elements from one array to another
+	// Arguments: none
+	// Output: a duplicte object
 	void Copy(E* queue);
 };
 
-
 // Copy Constructor: MyQueue
-// purpose: set the inital state of the array to the array being compaired
+// Purpose: set the inital state of the array to the array being compaired
+// Arguments: none
+// Output: the empty queue
 template<class E>
 inline MyQueue<E>::MyQueue()
 {
 	elements = new E[maxElements];
 }
 // Copy Constructor: MyQueue
-// purpose: set the inital state of the array to the array being compaired
+// Purpose: set the inital state of the array to the array being compaired
+// Arguments: class object to copy
+// Output: a duplicet queue 
 template<class E>
 inline MyQueue<E>::MyQueue(const MyQueue& queue)
 {
@@ -60,6 +83,8 @@ inline MyQueue<E>::MyQueue(const MyQueue& queue)
 }
 // Destructor: MyQueue
 // Purpose: clear the array of elements
+// Arguments: none
+// Output: nothing 
 template<class E>
 inline MyQueue<E>::~MyQueue()
 {
@@ -67,6 +92,8 @@ inline MyQueue<E>::~MyQueue()
 }
 // Method: Print 
 // Purpose: Print out the contents of the array
+// Arguments: none
+// Output: the contents of the queue on a new line for each entery
 template<class E>
 inline void MyQueue<E>::Print()
 {
@@ -81,6 +108,8 @@ inline void MyQueue<E>::Print()
 }
 // Method: Pop
 // Purpose: Return the last element in the array
+// Arguments: none
+// Output: the first element
 template<class E>
 inline E MyQueue<E>::Pop()
 {
@@ -107,7 +136,9 @@ inline E MyQueue<E>::Pop()
 	}
 }
 // Method: Push
-// Purpose: Add one element to the end of the array
+// Purpose: Add one element to the array and reorder it from gratest to least
+// Arguments: element being added to the queue
+// Output: nothing 
 template<class E>
 inline void MyQueue<E>::Push(E element)
 {
@@ -139,6 +170,8 @@ inline void MyQueue<E>::Push(E element)
 }
 // Method: GetSize
 // Purpose: Return the number of elements in the array
+// Arguments: none
+// Output: true if empty or false if not empty
 template<class E>
 inline int MyQueue<E>::GetSize()
 {
@@ -146,6 +179,8 @@ inline int MyQueue<E>::GetSize()
 }
 // Method: IsEmpty
 // Purpose: Return true if there are no elements contained
+// Arguments: none
+// Output: true if empty or false if not empty
 template<class E>
 inline bool MyQueue<E>::IsEmpty()
 {
@@ -160,6 +195,8 @@ inline bool MyQueue<E>::IsEmpty()
 }
 // Method: Copy
 // Purpose: Copy the elements from one array to another
+// Arguments: class object to copy
+// Output: a duplicet queue 
 template<class E>
 inline void MyQueue<E>::Copy(E* queue)
 {
